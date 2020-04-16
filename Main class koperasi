@@ -1,0 +1,17 @@
+class login:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+    def login_autentikator(self):
+        pass
+
+class admin(Employee):
+    def __init__(self, id_emp):
+        self.id_emp = id_emp
+    def proposal(self):
+        self.proposal = proposal
+    def stok_barang(self, kategori):
+        self.barang = kategori
+    def pembelian(self, id_barang):
+        self.pembelian = id_barang
