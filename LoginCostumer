@@ -1,0 +1,21 @@
+UserList = []
+PassList = []
+
+print("Welcome to Koperasi Itk/n")
+
+ans = input("Do you have an account with Koperasi Itk? please enter y/n:")
+
+if ans == 'n':
+    User = input("Please type your username: ")
+    UserList.append(User)
+    Pass = input("Please type your password: ")
+    PassList.append(Pass)
+    print(UserList,PassList)
+    print("You have created your new account with Koperasi Itk, please login\n")
+    User1 = input("Please enter your username: ")
+    Pass1 = input("Please enter your password: ")
+    if User1 == (UserList) and Pass1 == (PassList):
+        print("Welcome to Koperasi Itk, type MENU to enter: ")
+
+    else:
+        print("Incorrect username or Password")
