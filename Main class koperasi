@@ -15,3 +15,38 @@ class admin(Employee):
         self.barang = kategori
     def pembelian(self, id_barang):
         self.pembelian = id_barang
+        
+class penjual(Client):
+    def __init__(self, id_client, date, transaksi):
+        self.id_client = id_client
+        self.date = date
+        self.transaksi = transaksi
+    def getTransaksi(self):
+        return self.transaksi
+    def setTransaksi(self, baru):
+        self.transaksi = baru
+
+class customer(User):
+    def __init__(self, id_user, simpanan, pinjaman, angsuran, denda):
+        self.id_user = id_user
+        self.simpanan = simpanan
+        self.pinjaman = pinjaman
+        self.angsuran = angsuran
+        self.denda = denda
+    def getSimpanan(self):
+        return self.simpanan
+    def setSimpanan(self, baru):
+        return self.simpanan = baru
+    def getPinjaman(self):
+        return self.pinjaman
+    def setPinjaman(self, baru):
+        return self.pinjaman = baru
+    def getAngsuran(self):
+        return self.angsuran
+    def setAngsuran(self, baru):
+        return self.angsuran = baru
+    def getDenda(self):
+        return self.denda
+    def setDenda(self, baru):
+        return self.denda = baru
+
