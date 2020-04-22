@@ -1,0 +1,21 @@
+class Stock Barang:
+    def __init__(self, kode_barang,nama_barang,satuan,harga,stock,discount):
+        self.kode_barang = kode barang
+        self.nama_barang = nama barang
+        self.satuan = satuan
+        self.harga = harga
+        self.stock = stock
+        self.discount = discount
+        
+        
+class Gudang :
+    def __init__(self ,kode_barang,nama_barang,harga satuan,stock):
+        self.kode_barang = kode barang
+        self.nama_barang = nama barang
+        self.harga_satuan = harga satuan
+        self.stock = stock
+    
+    
+
+        
+        
