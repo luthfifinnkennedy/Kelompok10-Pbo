@@ -1,20 +1,70 @@
-class login:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
+class login(object):
+    def __init__(self, *args, **kwargs):
+        self.__username = kwargs.get('username', 'mimin')
+        self.__password = kwargs.get('password', '1111')
+
+        @property
+        def username(self):
+            return self.__username
+
+        @username.setter
+        def username(self, username):
+            self.__username = username
+
+        @property
+        def password(self):
+            return self.__password
+
+        @password.setter
+        def password(self, password):
+            self.__password = password
 
     def login_autentikator(self):
         pass
+        
+        
+class admin(object):
+    def __init__(self, *args, **kwargs):
+        self.__id = kwargs.get('id', '111')
+    def __init__(self, *args, **kwargs):
+        self.__proposal = kwargs.get('proposal', 'nomor 1')
+    def __init__(self, *args, **kwargs):
+        self.__stokBarang = kwargs.get('stokBarang', '01')
+    def __init__(self, *args, **kwargs):
+        self.__pembelian = kwargs.get('pembelian', 'namaBarang')	
 
-class admin(Employee):
-    def __init__(self, id_emp):
-        self.id_emp = id_emp
+    @property
+    def id(self):
+        return self.__id
+    
+    @id.setter
+    def id(self, id):
+        self.__id = id
+
+    @property
     def proposal(self):
-        self.proposal = proposal
-    def stok_barang(self, kategori):
-        self.barang = kategori
-    def pembelian(self, id_barang):
-        self.pembelian = id_barang
+        return self.__proposal
+
+    @proposal.setter
+    def proposal(self, proposal):
+        self.__proposal = proposal
+
+    @property
+    def stokBarang(self):
+        return self.__stokBarang
+
+    @stokBarang.setter
+    def stokBarang(self, stokBarang):
+        self.__stokBarang = stokBarang
+        
+    @property
+    def pembelian(self):
+        return self.__pembelian
+
+    @pembelian.setter
+    def pembelian(self, pembelian):
+        self.__pembelian = pembelian
+        
         
 class penjual(Client):
     def __init__(self, id_client, date, transaksi):
