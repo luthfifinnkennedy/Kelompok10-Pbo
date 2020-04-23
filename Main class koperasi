@@ -64,39 +64,79 @@ class admin(object):
     @pembelian.setter
     def pembelian(self, pembelian):
         self.__pembelian = pembelian
-        
-        
-class penjual(Client):
-    def __init__(self, id_client, date, transaksi):
-        self.id_client = id_client
-        self.date = date
-        self.transaksi = transaksi
-    def getTransaksi(self):
-        return self.transaksi
-    def setTransaksi(self, baru):
-        self.transaksi = baru
+              
+class penjual(object):
+    def __init__(self, *args, **kwargs):
+        self.__id_client = kwargs.get('id_client', '11')
+        self.__date = kwargs.get('date')
+        self.__transaksi = kwargs.get ('transaksi', '01')
+    def __Transaksi(self, *args, **kwargs):
+        return self.__transaksi
+    def __Transaksi(self, *args, **kwargs):
+        self.__transaksi = kwargs.get ('baru')
 
-class customer(User):
-    def __init__(self, id_user, simpanan, pinjaman, angsuran, denda):
-        self.id_user = id_user
-        self.simpanan = simpanan
-        self.pinjaman = pinjaman
-        self.angsuran = angsuran
-        self.denda = denda
-    def getSimpanan(self):
-        return self.simpanan
-    def setSimpanan(self, baru):
-        return self.simpanan = baru
-    def getPinjaman(self):
-        return self.pinjaman
-    def setPinjaman(self, baru):
-        return self.pinjaman = baru
-    def getAngsuran(self):
-        return self.angsuran
-    def setAngsuran(self, baru):
-        return self.angsuran = baru
-    def getDenda(self):
-        return self.denda
-    def setDenda(self, baru):
-        return self.denda = baru
+    @property
+    def id_client (self):
+        return self.__id_client
+    @id_client.setter
+    def id_client (self):
+        return self.__id_client
+    
+    @property
+    def date(self):
+        return self.__date
+    @date.setter
+    def date(self):
+        return self.__date
+
+    @property
+    def transaksi(self):
+        return self._transasksi
+    @date.setter
+    def transaksi(self):
+        return self._transasksi
+
+    
+class customer(object):
+    def __init__(self,*args, **kwargs ):
+        self.__id_user = kwargs.get ('id_user','Nadiah')
+        self.__simpanan = kwargs.get ('simpanan', '11')
+        self.__pinjaman = kwargs.get ('pinjaman''111')
+        self.__angsuran = kwargs.get ('angsuran', '1111')
+        self__.denda = kwargs.get ('denda','11111')
+
+    @property
+    def id_user (self):
+        return self.__id_user
+    @id_user.setter
+    def id_user (self):
+        return self.__id_user
+
+    @property
+    def Simpanan(self):
+        return self.__simpanan
+    @Simpanan.setter
+    def Simpanan(self):
+        return self.__simpanan
+    
+    @property
+    def Pinjaman(self):
+        return self.__pinjaman
+    @Pinjaman.setter
+    def Pinjaman(self, baru):
+        return self.__pinjaman 
+
+    @property
+    def Angsuran(self):
+        return self.__angsuran
+    @Angsuran.setter
+    def Angsuran(self, baru):
+        return self.__angsuran 
+
+    @property
+    def Denda(self):
+        return self.__denda
+    @Denda.setter
+    def Denda(self, baru):
+        return self.__denda 
 
