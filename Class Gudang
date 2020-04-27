@@ -1,21 +1,39 @@
-class Stock Barang:
-    def __init__(self, kode_barang,nama_barang,satuan,harga,stock,discount):
-        self.kode_barang = kode barang
-        self.nama_barang = nama barang
-        self.satuan = satuan
-        self.harga = harga
-        self.stock = stock
-        self.discount = discount
-        
-        
-class Gudang :
-    def __init__(self ,kode_barang,nama_barang,harga satuan,stock):
-        self.kode_barang = kode barang
-        self.nama_barang = nama barang
-        self.harga_satuan = harga satuan
-        self.stock = stock
-    
-    
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, relationship
 
-        
-        
+Base = declarative_base()
+
+class Stock_Barang(Base):
+
+    __tablename__= 'Stock'
+
+    kode_barang = Column(String, Primary_Key=True
+    nama_barang = Column(String)
+    satuan = Column(Integer)
+    harga = Column(Integer)
+    stock = Column (integer)
+    discount = Column(Integer)
+
+class Gudang(Base):
+                         
+    __tablename__= 'Gudang'
+
+    kode_barang = Column(String, Primary_Key=True
+    nama_barang = Column(String)
+    satuan = Column(Integer)
+    harga = Column(Integer)
+    stock = Column (integer)
+                         
+engine = craete_engine('sqlite:///:memory', echo=True)
+Base.metadata.create_all(bind=engine)
+session = sessionmaker(bind=engine)
+
+session= Session()
+
+session.close()
+
+
+
+
+
