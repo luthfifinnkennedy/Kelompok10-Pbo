@@ -28,5 +28,5 @@ class loginpenjual:
     def loginAutentikator(self):
         pass
 
-customer = loginpenjual("Janney", "akmal34")
+penjual = loginpenjual("Janney", "akmal34")
 print("username : ", penjual.username ,"password :", penjual.password)
