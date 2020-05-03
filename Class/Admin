@@ -7,12 +7,12 @@ class AdminOrm(Base):
     __tablename__='admin'
     Username = Column(string) 
     Password= Column(String)
-    Id_admin = Column(String,primary_key=False)
+    Id_admin = Column(String,primary_key= True)
     Nama = Column (String) 
     Alamat = Column(String)
     No_Telepon= Column(Integer)
 
-    def __init__(self, id, proposal, StockBarang, Pembelian):
+    def __init__(self, Username, Password, Id_admin, Nama, Alamat, No_Telepon):
         self.Username = Username
         self.Password = Password
         self.Id_admin = Id_admin
