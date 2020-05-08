@@ -1,41 +1,31 @@
-class poposal:
+import admin
 
-    def __init__(self, nama, pengaju, tanggalPengajuan, balasanProposal):
-        self.__nama = nama
-        self.__pengaju = pengaju
-        self.__tanggalPengajuan = tanggalPengajuan
-        self.__balasan = balasanProposal
+class proposal:
+    def __init__(self, Nama, Pengaju, TanggalPengajuan, BalasanProposal):
+        self.__NamaPengaju = NamaPengaju
+        self.__TanggalPengajuan = TanggalPengajuan
+        self.__BalasanProposal = BalasanProposal
 
     @property
-    def nama(self):
+    def Namapengaju(self):
         pass
-    @nama.getter
-    def nama(self):
-        return self.__nama
-    @nama.setter
-    def nama(self, nama):
-        self.__nama = nama
+    @Namapengaju.getter
+    def NamaPengaju(self):
+        return self.__NamaPengaju
+    @Namapengaju.setter
+    def NamaPengaju(self, NamaPengaju):
+        self.__NamaPengaju = NamaPengaju
 
     @property
-    def pengaju(self):
-        return self.__pengaju
-    @pengaju.setter
-    def pengaju(self, pengaju):
-        self.__pengaju = pengaju
-
-    @property
-    def tanggalPengaju(self):
+    def TanggalPengajuan(self):
         return self.__tanggalPengajuan
-    @tanggalPengaju.setter
-    def tanggalPengaju(self, tanggalPengaju):
-        self.__tanggalPengajuan = tanggalPengaju
+    @TanggalPengajuan.setter
+    def TanggalPengajuan(self, TanggalPengajuan):
+        self.__TanggalPengajuan = TanggalPengajuan
 
     @property
-    def balasan(self):
-        return self.__balasan
-    @balasan.setter
-    def balasan(self, balasan):
-        self.__balasan = balasan
-
-
-
+    def Balasan(self):
+        return self.__Balasan
+    @Balasan.setter
+    def Balasan(self, Balasan):
+        self.__Balasan = Balasan
