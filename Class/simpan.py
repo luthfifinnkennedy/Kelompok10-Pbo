@@ -1,37 +1,39 @@
-from Koperasi.transaksi import transaksi
+import Transaksi
 
-class simpan(transaksi):
-    def __init__(self, id, nama, jumlahTransaksi, saldo):
-        self.__id = id
-        self.__nama = nama
-        self.__jumlahTransaksi = jumlahTransaksi
-        self.__saldo = saldo
-
-    @property
-    def id(self):
-        return self.__id
-    @id.setter
-    def id(self, id):
-        self.__id = id
+class simpan():
+    def __init__(self, IdCostumer, NamaCostumer, JumlahTransaksi, Saldo):
+        self.__IdCostumer = IdCostumer
+        self.Nama = Nama
+        self.__JumlahTransaksi = JumlahTransaksi
+        self.__Saldo = Saldo
 
     @property
-    def nama(self):
-        return self.__nama
-    @nama.setter
-    def nama(self, nama):
-        self.__nama = nama
+    def IdCostumer(self):
+        return self.__IdCostumer
+    @IdCostumer.setter
+    def IdCostumer(self, IdCostumer):
+        self.__IdCostumer = IdCostumer
 
     @property
-    def jumlahTransaksi(self):
-        return self.__jumlahTransaksi
-    @jumlahTransaksi.setter
-    def jumlahTransaksi(self, jumlahTransaksi):
-        self.__jumlahTransaksi = jumlahTransaksi
+    def JumlahTransaksi(self):
+        return self.__JumlahTransaksi
+    @JumlahTransaksi.setter
+    def JumlahTransaksi(self, JumlahTransaksi):
+        self.__JumlahTransaksi = JumlahTransaksi
 
     @property
-    def saldo(self):
-        return  self.__saldo
-    @saldo.setter
-    def saldo(self, saldo):
-        self.__saldo = saldo
+    def Saldo(self):
+        return  self.__Saldo
+    @Saldo.setter
+    def Saldo(self, Saldo):
+        self.__Saldo = Saldo
     
+    '''
+    Terimakasih untuk transaksi yang telah dilakukan.
+    Silahkan transaksi ulang jika ada yang kurang atau salah
+
+                                Have a Nice Day
+    '''
+
+    def cetakNota(self) -> bool:
+        pass
