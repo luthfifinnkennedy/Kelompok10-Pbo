@@ -1,0 +1,6 @@
+from enum import Enum
+
+class Hak_Akses(Enum):
+    Admin = 1
+    Ketua = 2
+    Bendahara = 3
