@@ -1,55 +1,63 @@
-from Koperasi.transaksi import transaksi
+import Transaksi
 
-class pinjam(transaksi):
-    def __init__(self, nomorPinjam, id, sisaBayar, alamat, tanggalBayar, tanggalTempo):
-        self.__nomor = nomorPinjam
-        self.__id = id
-        self.__sisaBayar = sisaBayar
-        self.__alamat = alamat
-        self.__tanggalBayar = tanggalBayar
-        self.__tanggalTempo = tanggalTempo
-
-    @property
-    def nomor(self):
-        return self.__nomor
-    @nomor.setter
-    def nomor(self, nomor):
-        self.__nomor = nomor
+class pinjam():
+    def __init__(self, NomorPinjam, IdCostumer, SisaBayar, Nama, Alamat, TanggalBayar, TanggalTempo):
+        self.__NomorPinjam = NomorPinjam
+        self.__IdCostumer= IdCostumer
+        self.__SisaBayar = SisaBayar
+        self.Nama = Nama
+        self.__Alamat = Alamat
+        self.__TanggalBayar = TanggalBayar
+        self.__TanggalTempo = TanggalTempo
 
     @property
-    def id(self):
-        return self.__id
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    def NomorPinjam(self):
+        return self.__NomorPinjam
+    @NomorPinjam.setter
+    def NomorPinjam(self, NomorPinjam):
+        self.__NomorPinjam = NomorPinjam
 
     @property
-    def sisaBayar(self):
-        return self.__sisaBayar
-    @sisaBayar.setter
-    def sisaBayar(self, sisaBayar):
-        self.__sisaBayar = sisaBayar
+    def IdCostumer(self):
+        return self.__IdCostumer
+    @IdCostumer.setter
+    def IdCostumer(self, IdCostumer):
+        self.__IdCostumer = IdCostumer
 
     @property
-    def alamat(self):
-        return self.__alamat
-    @alamat.setter
-    def alamat(self, alamat):
-        self.__alamat = alamat
+    def SisaBayar(self):
+        return self.__SisaBayar
+    @SisaBayar.setter
+    def SisaBayar(self, SisaBayar):
+        self.__SisaBayar = SisaBayar
 
     @property
-    def tanggalBayar(self):
-        return self.__tanggalBayar
-    @tanggalBayar.setter
-    def tanggalBayar(self, tanggalBayar):
-        self.__tanggalBayar = tanggalBayar
+    def Alamat(self):
+        return self.__Alamat
+    @Alamat.setter
+    def Alamat(self, Alamat):
+        self.__Alamat = Alamat
 
     @property
-    def tanggalTempo(self):
-        return self.__tanggalTempo
-    @tanggalTempo.setter
-    def tanggalTempo(self, tanggalTempo):
-        self.__tanggalTempo = tanggalTempo
+    def TanggalBayar(self):
+        return self.__TanggalBayar
+    @TanggalBayar.setter
+    def TanggalBayar(self, TanggalBayar):
+        self.__TanggalBayar = TanggalBayar
 
+    @property
+    def TanggalTempo(self):
+        return self.__TanggalTempo
+    @TanggalTempo.setter
+    def TanggalTempo(self, TanggalTempo):
+        self.__TanggalTempo = TanggalTempo
 
+    '''
+    Terimakasih untuk transaksi yang telah dilakukan.
+    Silahkan transaksi ulang jika ada yang kurang atau salah
 
+                                Have a Nice Day
+    '''
+
+    def cetakNota(self) -> bool:
+        pass
