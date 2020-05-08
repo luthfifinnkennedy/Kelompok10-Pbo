@@ -1,58 +1,39 @@
-from sqlalchemy import create_engine, Column, Integer, String
-from Class.KelasAdmin import KelasAdmin
-from db.base import Base, sessionFactory
+class Admin:
 
-class AdminOrm(Base):
+    def __init__(self, username, password, id_admin, Hak_akses):
+        self.__username = Username
+        self.__password = Password
+        self.__id_admin = Id_admin
+        self.__Hak_akses = Hak_akses
 
-    __tablename__='admin'
-    Username = Column(string) 
-    Password= Column(String)
-    Id_admin = Column(String,primary_key= True)
-    Nama = Column (String) 
-    Alamat = Column(String)
-    No_Telepon= Column(Integer)
+    @property
+    def username(self):
+        return self.__Username
+    @username.setter
+    def username(self, username):
+        self.__username = Username
 
-    def __init__(self, Username, Password, Id_admin, Nama, Alamat, No_Telepon):
-        self.Username = Username
-        self.Password = Password
-        self.Id_admin = Id_admin
-        Self.Nama = Nama
-        self.Alamat = Alamat
-        self.No_Telepon = No_Telepon
 
-    @staticmethod
-    def showAdmin():
-        try:
-            session = sessionFactory()
-            for Admin in session.query(AdminOrm).all():
-                print(
-                    "Nama = {}\nId_admin= {}"
-                     "\n===================="
-                            .format(Admin.Username, Admin.Password, Admin.Id_admin, Admin.Nama, Admin.Alamat, Admin.No_Telepon))
-            session.close()
-        except Exception as e :
-            print("===>",e)
-    def insertAdmin(Id_admin):
-        try:
-            session = sessionFactory()
-            Admin = AdminOrm(Username, Password, Id_admin, Nama, Alamat, No_Telpon)
-            session.add(admin)
-            session.commit()
-            session.close()
-        except Exception as e:
-            print("===>", e)
-        else:
-            print("Data Berhasil Disimpan!")
-            
-    @staticmethod
-    def verifyUsername(Password) -> bool:
-        try:
-            session = sessionFactory()
-            if ((session.query(adminOrm).filter_by(Password=Password).count()) == 1):
-                return True
-            else:
-                return False
-            session.close()
-        except Exception as e:
-            print("===>", e)
+    @property
+    def password(self):
+        return self.__password
+    @password.setter
+    def password(self, password):
+        self.__password = Password
+
+
+    @property
+    def id_admin(self):
+        return self.__id_admin
+    @id_admin.setter
+    def id_admin(self, id_admin):
+        self.__id_admin = Id_admin
+
+
+    @property
+    def Hak_akses(self):
+        return self.__Hak_akses
+    @Hak_akses.setter
+    def Hak_akses(self, Hak_akses):
+        self.__Hak_akses = Hak_akses
 
