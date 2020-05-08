@@ -1,44 +1,54 @@
-from Koperasi.transaksi import transaksi
+from Class.Transaksi import Transaksi
 
-class jualBeli(transaksi):
-    def __init__(self, namaBarang, id, hargaBarang, jumlahBarang, discount):
-        self.__namaBarang = namaBarang
-        self.__id = id
-        self.__hargaBarang = hargaBarang
-        self.__jumlahBarang = jumlahBarang
-        self.__discount = discount
-
-    @property
-    def namaBarang(self):
-        return self.__namaBarang
-    @namaBarang.setter
-    def namaBarang(self, namaBarang):
-        self.__namaBarang = namaBarang
+class jualBeli(Transaksi):
+    def __init__(self, NamaBarang, IdBarang, Tanggal, HargaBarang, JumlahBarang):
+        self.__NamaBarang = NamaBarang
+        self.__IdBarang = Id
+        self.__Tanggal = Tanggal
+        self.__HargaBarang = HargaBarang
+        self.__JumlahBarang = JumlahBarang
 
     @property
-    def id(self):
-        return self.__id
+    def NamaBarang(self):
+        return self.__NamaBarang
+    @NamaBarang.setter
+    def NamaBarang(self, NamaBarang):
+        self.__NamaBarang = NamaBarang
+
+    @property
+    def IdBarang(self):
+        return self.__IdBarang
     @id.setter
-    def id(self, id):
-        self.__id = id
+    def IdBarang(self, IdBarang):
+        self.__IdBarang = IdBarang
 
     @property
-    def hargaBarang(self):
-        return self.__hargaBarang
-    @hargaBarang.setter
-    def hargaBarang(self, hargaBarang):
-        self.__hargaBarang = hargaBarang
+    def Tanggal(self):
+        return self.__Tanggal
+    @tglTransaksi.setter
+    def Tanggal(self, Tanggal):
+        self.__Tanggal = Tanggal
 
     @property
-    def jumlahBarang(self):
-        return self.__jumlahBarang
-    @jumlahBarang.setter
-    def jumlahBarang(self, jummlahBarang):
-        self.__jumlahBarang = jummlahBarang
+    def HargaBarang(self):
+        return self.__HargaBarang
+    @HargaBarang.setter
+    def HargaBarang(self, HargaBarang):
+        self.__HargaBarang = HargaBarang
 
     @property
-    def discount(self):
-        return self.__discount
-    @discount.setter
-    def discount(self, discount):
-        self.__discount = discount
+    def JumlahBarang(self):
+        return self.__JumlahBarang
+    @JumlahBarang.setter
+    def JumlahBarang(self, JummlahBarang):
+        self.__JumlahBarang = JummlahBarang
+
+    '''
+    Terima kasih terlah mengakses. Silahkan lakukan transasksi ulang,
+    jika ada yang kurang atau terlewat.
+
+                                  Have a Nice Day                               
+    '''
+
+    def cetakNota(self) -> bool:
+        pass
