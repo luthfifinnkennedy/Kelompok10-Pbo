@@ -1,10 +1,11 @@
+import penjual
+
 class stokBarang:
-    def __init__(self, nama, kodeBarang, hargaSatuan, stock, discount):
+    def __init__(self, nama, kodeBarang, hargaSatuan, stock):
         self.__nama = nama
         self.__kodeBarang = kodeBarang
         self.__hargaSatuan = hargaSatuan
         self.__stock = stock
-        self.__discount = discount
 
     @property
     def nama(self):
@@ -34,9 +35,3 @@ class stokBarang:
     def stock(self, stock):
         self.__stock = stock
 
-    @property
-    def discount(self):
-        return self.__discount
-    @discount.setter
-    def discount(self, discount):
-        self.__discount = discount
