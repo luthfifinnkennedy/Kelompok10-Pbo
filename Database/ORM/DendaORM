@@ -1,0 +1,23 @@
+from sqlalchemy import Column, ForeignKey, Integer, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/class')
+import Transaksi
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+class Denda(Base):
+    __tablename__= 'Denda'
+    
+    idCustomer = Column(Integer, primary_key=True)
+    tanggalPeminjaman = Column(Date)
+    JumlahDenda = Column(Integer)
+    
+    def __init__(self, idCustomer, tanggalPeminjaman, jumlahDenda):
+        self.__idCustomer = idCustomer
+        self.__tanggalPinjam = tanggalPeminjaman
+        self.__jumlahDenda = jumlahDenda
+
+   
