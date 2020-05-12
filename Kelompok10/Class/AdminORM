@@ -1,0 +1,92 @@
+from sqlalchemy import Column, String, Integer, Enum
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database.Data_Base import Base, sessionFactory
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/class')
+import Hak_akses
+
+class AdminOrm(Base):
+    __tablename__='Admin'
+
+    username = Column(String, unique=True)
+    password = Column(String)
+    id_admin = Column(Integer, primary_key=True)
+    Hak_akses = Column(Enum)
+
+    def __init__(self, username, password, id_admin, Hak_akses):
+        self.__username = Username
+        self.__password = Password
+        self.__id_admin = Id_admin
+        self.__Hak_akses = Hak_akses
+
+    @staticmethod
+    def showAdmin():
+        try:
+            session = sessionFactory()
+            for user in session.query(AdminOrm).all():
+                print("username = {}, password = {}, id_admin = {}, Hak_akses = {}".format(user.id, user.username,
+                                                                                          user.password,
+                                                                                          user.hak_akses))
+            session.close()
+        except Exception as e:
+            print("===>", e)
+
+    def insertAdmin(self):
+        try:
+            session = sessionFactory()
+            AdminOrm = AdminOrm(self.username, self.password, self.id_admin, self.Hak_akses)
+            session.add(AdminOrm)
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data Tersimpan!")
+
+    @staticmethod
+    def updateAdminPass(id_admin):
+        try:
+            newusername = input("Masukkan username Baru: ")
+            newpassword = input("Masukkan Password Baru: ")
+            newid_admin = input("Masukkan id_admin Baru: ")
+            session = sessionFactory()
+            session.query(UserOrm).filter_by(id_admin=id_admin).update({
+                AdminOrm.username: newusername, AdminOrm.password: newpassword, AdminOrm.id_admin: newid_admin
+            }, synchronize_session=False)
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data Terupdate!")
+
+    @staticmethod
+    def deleteAdmin(username):
+        try:
+            session = sessionFactory()
+            session.query(AdminOrm).filter_by(username=username).delete()
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data Terhapus!")
+
+    @staticmethod
+    def verifyAdmin(username, password) -> bool:
+        try:
+            session = sessionFactory()
+            if ((session.query(AdminOrm).filter_by(username=username, password=password).count()) == 1):
+                return True
+            else:
+                return False
+            session.close()
+        except Exception as e:
+            print("===>", e)
+
+
+
+
+
