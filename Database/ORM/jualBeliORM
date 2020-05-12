@@ -1,0 +1,27 @@
+from sqlalchemy import Column, ForeignKey, String, Integer, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/class')
+import Transaksi
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+
+class jualBeli(Base):
+    __tablename__='jualBeli'
+
+    NamaBarang = Column(String)
+    IdBarang = Column(Integer,primary_key=True)
+    Tanggal = Column(Date)
+    HargaBarang = Column(Integer)
+    JumlahBarang = Column(Integer)
+
+    
+    def __init__(self, NamaBarang, IdBarang, Tanggal, HargaBarang, JumlahBarang):
+        self.__NamaBarang = NamaBarang
+        self.__IdBarang = IdBarang
+        self.__Tanggal = Tanggal
+        self.__HargaBarang = HargaBarang
+        self.__JumlahBarang = JumlahBarang
