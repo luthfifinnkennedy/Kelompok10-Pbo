@@ -1,0 +1,31 @@
+from sqlalchemy import Column, ForeignKey, String, Integer, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/class')
+import Transaksi
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+
+class pinjam(Base):
+    __tablename__= 'pinjam'
+
+    NomorPinjam = Column(Integer)
+    IdCostumer = Column(String, primary_key=True)
+    SisaBayar = Column(Integer)
+    Nama = Column(String)
+    Alamat = Column(String)
+    TanggalBayar = Column(Date)
+    TanggalTempo = Column(Date)
+    
+    def __init__(self, NomorPinjam, IdCostumer, SisaBayar, Nama, Alamat, TanggalBayar, TanggalTempo):
+        self.__NomorPinjam = NomorPinjam
+        self.__IdCostumer= IdCostumer
+        self.__SisaBayar = SisaBayar
+        self.Nama = Nama
+        self.__Alamat = Alamat
+        self.__TanggalBayar = TanggalBayar
+        self.__TanggalTempo = TanggalTempo
+ 
