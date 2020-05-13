@@ -1,0 +1,90 @@
+from sqlalchemy import Column, String, Integer, Enum
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database.Data_Base import Base, sessionFactory
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/class')
+import Hak_akses
+
+
+class UserOrm(Base):
+    __tablename__ = 'user'
+
+    namaUser = Column(String, unique=True)
+    idUser = Column(Integer, primary_key=True)
+    password = Column(String)
+    hak_akses = Column(Enum)
+
+    def __init__(self, namaUser, idUser, password, hak_akses):
+        self.namaUser = username
+        self.idUser = id
+        self.password = password
+        self.hak_akses = hak_akses
+
+    @staticmethod
+    def showUser():
+        try:
+            session = sessionFactory()
+            for user in session.query(UserOrm).all():
+                print("Id User = {}, Username = {}, Password = {}, Hak Akses = {}".format(user.id, user.username,
+                                                                                          user.password,
+                                                                                          user.hak_akses))
+            session.close()
+        except Exception as e:
+            print("===>", e)
+
+    def insertUser(self):
+        try:
+            session = sessionFactory()
+            userOrm = UserOrm(self.username, self.password, self.hakAkses)
+            session.add(userOrm)
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data Tersimpan!")
+
+    @staticmethod
+    def updateUserPass(idUser):
+        try:
+            newPassword = input("Masukkan Password Baru: ")
+            session = sessionFactory()
+            session.query(UserOrm).filter_by(id=idUser).update({
+                UserOrm.password: newPassword
+            }, synchronize_session=False)
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data TerUpdate!")
+
+    @staticmethod
+    def deleteUser(username):
+        try:
+            session = sessionFactory()
+            session.query(UserOrm).filter_by(username=username).delete()
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data Terhapus!")
+
+    @staticmethod
+    def verifyUser(username, password) -> bool:
+        try:
+            session = sessionFactory()
+            if ((session.query(UserOrm).filter_by(username=username, password=password).count()) == 1):
+                return True
+            else:
+                return False
+            session.close()
+        except Exception as e:
+            print("===>", e)
+
+
+
+
