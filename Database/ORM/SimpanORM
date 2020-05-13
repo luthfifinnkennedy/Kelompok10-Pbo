@@ -1,0 +1,28 @@
+from sqlalchemy import Column, ForeignKey, String, Integer, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/class')
+import Transaksi
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+
+class Simpan(Base):
+    __tablename__ = 'Simpan'
+
+    IdCostumer = Column(String, primary_key=True)
+    Nama = Column(String)
+    JumlahTransaksi = Column(Integer)
+    Saldo = Column(Integer)
+    tanggal = Column(Date)
+    
+
+    def __init__(self, IdCostumer, NamaCostumer, JumlahTransaksi, Saldo, tanggal):
+        self.__IdCostumer = IdCostumer
+        self.Nama = Nama
+        self.__JumlahTransaksi = JumlahTransaksi
+        self.__Saldo = Saldo
+        self.__tanggal = tanggal
+        
