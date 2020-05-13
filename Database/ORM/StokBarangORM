@@ -1,0 +1,47 @@
+from sqlalchemy import Column, String, Integer, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+class StokBarangORM(Base):
+    __tablename__ = 'stokBarang'
+
+    nama = Column(String, unique=True)
+    kodeBarang = Column(String, primary_key=True)
+    ExpBarang = Column(Date)
+    hargaSatuan = Column(Integer)
+    stock = Column(String)
+    
+    def __init__(self, nama, kodeBarang, ExpBarang, hargaSatuan, stock):
+        self.__nama = nama
+        self.__kodeBarang = kodeBarang
+        self.__ExpBarang = ExpBarang
+        self.__hargaSatuan = hargaSatuan
+        self.__stock = stock
+
+    @staticmethod
+    def showstockBarang():
+        try:
+            session = sessionFactory()
+            for inv in session.query(stockBarangOrm).all():
+                print("nama = {}\nnama = {}\nkodeBarang = {}\ExpBarang = {}\nhargaSatuan = {}\nstock = {}"
+                      .format(inv.nama, inv.kodeBarang,inv.ExpBarang, inv.hargaSatuan, inv.stock))
+        except Exception as e:
+            print("===>", e)
+            
+    def insertstockBarang(self):
+        try:
+            session = sessionFactory()
+            stockBarangOrm = stockBarangOrm(self.nama, self.kodeBarang, self.Barang, self.hargaSatuan,
+                                                  self.Stock)
+            session.add(stockBarangOrm)
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Data Tersimpan!")       
+        
+   
