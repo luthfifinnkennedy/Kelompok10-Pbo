@@ -1,0 +1,18 @@
+from sqlalchemy import Column, ForeignKey, Integer, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+
+class TransaksiOrm(Base):
+    __tablename__ = 'transaksi'
+
+    namaTransaksi = Column(Integer, primary_key=True)
+    tanggal = Column(Date)
+    nominal = Column(Integer)
+
+    def __init__(self, tanggal, nominal):
+        self.tanggal = tanggal
+        self.nominal = nominal
