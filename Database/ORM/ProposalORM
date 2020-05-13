@@ -1,0 +1,45 @@
+from sqlalchemy import Column, ForeignKey, String, Date
+import sys
+sys.path.insert(0, 'd:/PBO/Kelompok 10/database')
+import Data_Base
+from database import Data_Base
+from database.Data_Base import Base, sessionFactory
+
+class proposalOrm(Base):
+    __tablename__ = 'proposal'
+
+    NamaPengaju = Column(String, primary_key=True)
+    TanggalPengajuan = Column(Date)
+    Balasanproposal = Column(String)
+    
+    def __init__(self, NamaPengaju, TanggalPengajuan, BalasanProposal):
+        self.__NamaPengaju = NamaPengaju
+        self.__TanggalPengajuan = TanggalPengajuan
+        self.__BalasanProposal = BalasanProposal
+
+    @staticmethod
+    def showproposal():
+        try:
+            session = sessionFactory()
+            for inv in session.queryproposalOrm.all():
+                print("nama = {}\nNamaPengaju = {}\nTanggalPengajuan = {}\BalasanProposal = {}"
+                      .format(inv.NamaPengaju, inv.TanggalPengajuan,inv.BalasanProposal))
+        except Exception as e:
+            print("===>", e)
+            
+    def insertproposal(self):
+        try:
+            session = sessionFactory()
+            proposalOrm = proposalOrm(self.NamaPengaju, self.TanggalPengajuan, self.BalasanProposal)
+            session.add(proposalOrm)
+            session.commit()
+            session.close()
+        except Exception as e:
+            print("===>", e)
+        else:
+            print("Kontrak Tersimpan!")       
+        
+
+
+
+
