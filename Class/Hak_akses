@@ -4,3 +4,42 @@ class Hak_Akses(Enum):
     Admin = 1
     Ketua = 2
     Bendahara = 3
+    Anggota = 4
+    Pegawai = 5
+    Penjual = 6
+
+class Login:
+    def __init__(self, username, password, hak_akses: Hak_Akses):
+        self.username = username
+        self.password = password
+        self.hak_akses = hak_akses
+
+    @property
+    def username(self):
+        pass
+    @username.getter
+    def username(self):
+       return self.username
+    @username.setter
+    def username(self, username):
+       self.username = username
+
+    @property
+    def password(self):
+        pass
+    @password.getter
+    def password(self):
+       return self.password
+    @password.setter
+    def password(self, password):
+       self.password = password
+
+    @property
+    def hak_akses(Hak_Akses):
+        pass
+    @hak_akses.getter
+    def hak_akses(Hak_Akses):
+       return self.hak_akses
+    @hak_akses.setter
+    def hak_akses(Hak_Akses, hak_akses):
+       self.hak_akses = hak_akses
