@@ -1,5 +1,10 @@
 from enum import Enum, auto
 
+class Admin(Enum):
+    username = auto()
+    password = auto()
+    id_admin = auto()
+
 class Ketua(Enum):
     username = auto()
     password = auto()
@@ -18,14 +23,27 @@ class Pegawai(Enum):
     alamat = auto()
     nomor_telepon = auto()
     id_pegawai = auto()
+    
+class Penjual(Enum):
+    kode_penjualan = auto()
+    id_penjual = auto()
 
 class user:
-    def __init__(self, ketua: Ketua, bendahara: Bendahara, anggota: Anggota, pegawai: Pegawai):
+    def __init__(self, admin: Admin, ketua: Ketua, bendahara: Bendahara, anggota: Anggota, pegawai: Pegawai, penjual: Penjual):
+        self.admin = admin
         self.ketua = ketua
         self.bendahara = bendahara
         self.anggota = anggota
         self.pegawai = pegawai
+        self.penjual = penjual
 
+    @property
+    def admin(self):
+        return self.__admin
+    @admin.setter
+    def admin(self, admin):
+        self.__admin = admin
+        
     @property
     def ketua(self):
         return self.__ketua
@@ -54,7 +72,12 @@ class user:
     def pegawai(self, pegawai):
         self.__pegawai = pegawai
 
-
+    @property
+    def penjual(self):
+        return self.__penjual
+    @penjual.setter
+    def penjual(self, penjual):
+        self.__penjual = penjual
 
 
 
