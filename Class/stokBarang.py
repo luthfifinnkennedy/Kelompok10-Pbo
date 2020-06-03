@@ -1,6 +1,7 @@
 import penjual
+from transaksii import jualBeli
 
-class stokBarang:
+class stokBarang(jualBeli):
     def __init__(self, nama, kodeBarang, hargaSatuan, stock):
         self.__nama = nama
         self.__kodeBarang = kodeBarang
