@@ -4,9 +4,7 @@ class Hak_Akses(Enum):
     Admin = 1
     Ketua = 2
     Bendahara = 3
-    Anggota = 4
-    Pegawai = 5
-    Penjual = 6
+    Pegawai = 4
 
 class Login:
     def __init__(self, username, password, hak_akses: Hak_Akses):
